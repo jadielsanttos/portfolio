@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&family=Poppins&family=Quicksand&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* variables */
+:root {
+    --primary-color: #3ACD52;
+    --main-background-color: rgba(245, 245, 245, 0.4);
+    --secondary-text-color: #333;
+    --border-color: #ccc;
+    --font-size-title: 1.56rem;
+    --primary-font-weight: 400;
+    --border-radius-default: 0.6rem;
+}
+
+/* css reuse */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.border {
+    width: 4rem;
+    height: 0.2rem;
+    background-color: #ccc;
+    border-radius: 50px;
+}
+
+.progress__bar__full {
+    height: 0.43rem;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    transition: all ease .8s;
+}
+
+.progress__bar__empty {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 0.43rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+
+/* start style */
+.container .left__side {
+    width: 30%;
+    height: 100vh;
+    box-shadow: 0px 4px 4px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container .left__side .area__left__side, .container .right__side {
+    padding: 1.25rem;
+}
+
+.container .left__side .area__left__side .area__top {
+    padding-bottom: 4.5rem;
+}
+
+.container .left__side .area__left__side .area__top i {
+    float: right;
+    font-size: 1.56rem;
+    cursor: pointer;
+}
+
+.container .left__side .area__left__side .area__links .own__nav ul li {
+    list-style: none;
+}
+
+.container .left__side .area__left__side .area__links .own__nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: 1.06rem;
+    padding: 0.51rem 0.62rem;
+    transition: .2s;
+}
+
+.container .left__side .area__left__side .area__links .own__nav ul li a.bg__link__active,
+.container .left__side .area__left__side .area__links .own__nav ul li a:hover {
+    background-color: var(--main-background-color);
+    color: var(--primary-color);
+    border-radius: var(--border-radius-default);
+}
+
+.container .left__side .area__left__side .area__links .own__nav ul li a i {
+    margin-right: 1.25rem;
+    font-size: 1.26rem;
+}
+
+.container .right__side {
+    width: 100%;
+    margin-left: 30%;
+    background-color: var(--main-background-color);
+}
+
+.container .right__side .area__static {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .right__side .area__static .area__icon__open__sidebar i, .container .right__side .area__static .area__icon__change__theme i {
+    font-size: 1.56rem;
+    cursor: pointer;
+}
+
+/* section main - right side */
+.container .right__side .section__main {
+    display: none;
+}
+
+.container .right__side .section__main .area__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    max-width: 428px;
+    margin: 0 auto;
+}
+.container .right__side .section__main .area__content .area__img img {
+    width: 15.62rem;
+    height: 15.62rem;
+    border-radius: 200px;
+}
+
+.container .right__side .section__main .area__content .area__my__name h1 {
+    font-weight: var(--primary-font-weight);
+    font-size: 1.87rem;
+    margin-bottom: 0.62rem;
+}
+
+.container .right__side .section__main .area__content .area__bio h2 {
+    margin-bottom: 0.62rem;
+    font-size: 1.06rem;
+    font-weight: var(--primary-font-weight);
+}
+
+.container .right__side .section__main .area__content .area__bio p {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    line-height: 1.56rem;
+}
+
+.container .right__side .section__main .area__content .link__cta, 
+.container .right__side .section__main .area__content .area__icons__social__media  {
+    margin-top: 1.5rem;
+}
+
+.container .right__side .section__main .area__content .link__cta a {
+    display: block;
+    padding: 0.81rem 1.87rem;
+    border-radius: var(--border-radius-default);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0px 4px 4px #ccc;
+    color: #000;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.container .right__side .section__main .area__content .link__cta a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.container .right__side .section__main .area__content .area__icons__social__media a {
+    color: #000;
+    text-decoration: none;
+    margin-right: 0.87rem;
+    transition: .3s;
+}
+
+.container .right__side .section__main .area__content .area__icons__social__media a:hover {
+    color: var(--primary-color);
+}
+
+.container .right__side .section__main .area__content .area__icons__social__media a i {
+    font-size: 1.25rem;
+}
+
+/* section about - right side */
+.container .section__about__me {
+    display: none;
+}
+
+.container .section__about__me .area__content__about__me {
+    padding-top: 2.2rem;
+}
+.container .section__about__me .area__content__about__me .area__title h1 {
+    font-size: 1.56rem;
+    font-weight: var(--primary-font-weight);
+}
+
+.container .section__about__me .area__content__about__me .area__info__about__me {
+    padding-top: 2.2rem;
+}
+
+.container .section__about__me .area__content__about__me .area__info__about__me .title__single h2 {
+    font-weight: var(--primary-font-weight);
+    margin: 0.87rem 0;
+}
+
+.container .section__about__me .area__content__about__me .area__info__about__me .subtitle__single h3 {
+    font-weight: var(--primary-font-weight);
+    font-size: 1.06rem;
+}
+
+.container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv {
+    margin-top: 1.5rem;
+}
+
+.container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv .btn__download__cv {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0px 4px 4px #ccc;
+    border-radius: var(--border-radius-default);
+    border: none;
+    outline: 0;
+    padding: 0.5rem 1.25rem;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1.06rem;
+}
+
+.container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv .btn__download__cv:hover {
+    transform: scale(1.01);
+}
+
+/* section skills - right side */
+.container .section__skills {
+    display: none;
+}
+
+.container .section__skills .area__title {
+    padding-top: 2.2rem;
+}
+
+.container .section__skills .area__title h1 {
+    font-weight: var(--primary-font-weight);
+    font-size: 1.56rem;
+}
+
+.container .section__skills .area__content__skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .section__skills .area__content__skills .area__item {
+    padding-top: 2.2rem;
+    width: calc(194px + 20px);
+    margin-right: 20px;
+}
+
+.container .section__skills .area__content__skills .area__item .title__item {
+    margin-bottom: 1.06rem;
+    cursor: pointer;
+}
+
+.container .section__skills .area__content__skills .area__item .title__item, 
+.container .section__skills .area__content__skills .area__item .technology__item .area__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .section__skills .area__content__skills .area__item .title__item h2 {
+    font-weight: var(--primary-font-weight);
+}
+
+.container .section__skills .area__content__skills .area__item .technology__item {
+    margin-bottom: 1.25rem;
+}
+
+.container .section__skills .area__content__skills .area__item .technology__item .area__top h3 {
+    font-weight: var(--primary-font-weight);
+}
+
+/* code specific to first item */
+.container .section__skills .area__content__skills .first__item .tech__1 .progress__bar__full {
+    width: 95%;
+}
+
+.container .section__skills .area__content__skills .first__item .tech__2 .progress__bar__full, 
+.container .section__skills .area__content__skills .first__item .tech__3 .progress__bar__full {
+    width: 90%;
+}
+
+.container .section__skills .area__content__skills .first__item .tech__4 .progress__bar__full {
+    width: 80%;
+}
+
+/* code specific to second item */
+.container .section__skills .area__content__skills .second__item .tech__1 .progress__bar__full {
+    width: 95%;
+}
+
+.container .section__skills .area__content__skills .second__item .tech__2 .progress__bar__full {
+    width: 88%;
+}
+
+.container .section__skills .area__content__skills .second__item .tech__3 .progress__bar__full {
+    width: 90%;
+}
+
+/* code specific to third item */
+.container .section__skills .area__content__skills .third__item .tech__1 .progress__bar__full {
+    width: 88%;
+}
+
+.container .section__skills .area__content__skills .third__item .tech__2 .progress__bar__full {
+    width: 80%;
+}
+
+/* section portfolio - right side */
+.container .section__portfolio .area__content__portfolio .area__title {
+    padding-top: 2.2rem;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio {
+    padding-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio {
+    width: 375px;
+    height: 220px;
+    margin-right: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio img {
+    width: inherit;
+    height: inherit;
+    border-radius: var(--border-radius-default);
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 4px #ccc;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio:hover .shadow__info {
+    opacity: 1;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 99;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+    border-radius: var(--border-radius-default);
+    transition: all ease .7s;
+    cursor: pointer;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info .name__project h1 {
+    font-size: 1.25rem;
+    font-weight: var(--primary-font-weight);
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info .link__see__project a {
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-default);
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info .repo__git__hub a {
+    display: block;
+    margin-top: 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info .repo__git__hub a:hover {
+    color: var(--secondary-text-color);
+}
+
+.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info .repo__git__hub a i {
+    font-size: 1.5rem;
+}
