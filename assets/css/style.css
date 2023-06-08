@@ -16,14 +16,24 @@ html, body {
 :root {
     --primary-color: #3ACD52;
     --main-background-color: rgba(245, 245, 245, 0.4);
+    --primary-text-color: #000;
     --secondary-text-color: #333;
-    --border-color: #ccc;
     --font-size-title: 1.56rem;
     --primary-font-weight: 400;
+    --border-dafault: 1px solid #ccc;
     --border-radius-default: 0.6rem;
+    --box-shadow-default: 0px 4px 4px #ccc;
 }
 
 /* css reuse */
+.dark__theme {
+    --main-background-color: #222;
+    --primary-text-color: #fff;
+    --secondary-text-color: #ccc;
+    --box-shadow-default: none;
+    --border-dafault: 1px solid #333;
+}
+
 .container {
     width: 100%;
     min-height: 100vh;
@@ -49,19 +59,56 @@ html, body {
     align-items: center;
     width: 100%;
     height: 0.43rem;
-    border: 1px solid #ccc;
+    border: var(--border-dafault);
     border-radius: 50px;
 }
 
+.transition {
+    transition: all ease .7;
+}
 
 /* start style */
-.container .left__side {
-    width: 30%;
-    height: 100vh;
-    box-shadow: 0px 4px 4px #ccc;
+.container .preload {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    z-index: 1001;
+}
+
+.container .preload .load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .preload .load .loader {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    border-top-color: #fff;
+    animation: is-rotating 1s infinite;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.container .left__side {
+    width: 30%;
+    height: 100vh;
+    box-shadow: var(--box-shadow-default);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
 }
 
 .container .left__side .area__left__side, .container .right__side {
@@ -76,6 +123,7 @@ html, body {
     float: right;
     font-size: 1.56rem;
     cursor: pointer;
+    color: var(--primary-text-color);
 }
 
 .container .left__side .area__left__side .area__links .own__nav ul li {
@@ -85,11 +133,11 @@ html, body {
 .container .left__side .area__left__side .area__links .own__nav ul li a {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: var(--primary-text-color);
     margin-bottom: 1rem;
     font-size: 1.06rem;
     padding: 0.51rem 0.62rem;
-    transition: .2s;
+    transition: .3s;
 }
 
 .container .left__side .area__left__side .area__links .own__nav ul li a.bg__link__active,
@@ -99,6 +147,11 @@ html, body {
     border-radius: var(--border-radius-default);
 }
 
+body.dark__theme .container .left__side .area__left__side .area__links .own__nav ul li a.bg__link__active,
+.container .left__side .area__left__side .area__links .own__nav ul li a:hover {
+    background-color: #fff;
+}
+
 .container .left__side .area__left__side .area__links .own__nav ul li a i {
     margin-right: 1.25rem;
     font-size: 1.26rem;
@@ -106,7 +159,7 @@ html, body {
 
 .container .right__side {
     width: 100%;
-    margin-left: 30%;
+    padding-left: 32%;
     background-color: var(--main-background-color);
 }
 
@@ -119,13 +172,42 @@ html, body {
 .container .right__side .area__static .area__icon__open__sidebar i, .container .right__side .area__static .area__icon__change__theme i {
     font-size: 1.56rem;
     cursor: pointer;
+    color: var(--primary-text-color);
 }
 
-/* section main - right side */
-.container .right__side .section__main {
+.container .right__side .area__static .area__icon__change__theme #icon__active__theme__light {
     display: none;
 }
 
+/* area load */
+.container .right__side .area__load {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    color: var(--primary-text-color);
+}
+
+.container .right__side .area__load .bar__full {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    height: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+.container .right__side .area__load .bar__loading {
+    width: 5%;
+    height: 0.5rem;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    transition: .5s;
+}
+
+/* section main - right side */
 .container .right__side .section__main .area__content {
     display: flex;
     justify-content: center;
@@ -145,12 +227,14 @@ html, body {
     font-weight: var(--primary-font-weight);
     font-size: 1.87rem;
     margin-bottom: 0.62rem;
+    color: var(--primary-text-color);
 }
 
 .container .right__side .section__main .area__content .area__bio h2 {
     margin-bottom: 0.62rem;
     font-size: 1.06rem;
     font-weight: var(--primary-font-weight);
+    color: var(--secondary-text-color);
 }
 
 .container .right__side .section__main .area__content .area__bio p {
@@ -169,8 +253,8 @@ html, body {
     padding: 0.81rem 1.87rem;
     border-radius: var(--border-radius-default);
     border: 2px solid var(--primary-color);
-    box-shadow: 0px 4px 4px #ccc;
-    color: #000;
+    box-shadow: var(--box-shadow-default);
+    color: var(--primary-text-color);
     text-decoration: none;
     transition: .3s;
 }
@@ -181,7 +265,7 @@ html, body {
 }
 
 .container .right__side .section__main .area__content .area__icons__social__media a {
-    color: #000;
+    color: var(--primary-text-color);
     text-decoration: none;
     margin-right: 0.87rem;
     transition: .3s;
@@ -206,6 +290,7 @@ html, body {
 .container .section__about__me .area__content__about__me .area__title h1 {
     font-size: 1.56rem;
     font-weight: var(--primary-font-weight);
+    color: var(--primary-text-color);
 }
 
 .container .section__about__me .area__content__about__me .area__info__about__me {
@@ -215,11 +300,15 @@ html, body {
 .container .section__about__me .area__content__about__me .area__info__about__me .title__single h2 {
     font-weight: var(--primary-font-weight);
     margin: 0.87rem 0;
+    color: var(--primary-text-color);
 }
 
 .container .section__about__me .area__content__about__me .area__info__about__me .subtitle__single h3 {
+    width: 100%;
     font-weight: var(--primary-font-weight);
     font-size: 1.06rem;
+    max-width: 800px;
+    color: var(--primary-text-color);
 }
 
 .container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv {
@@ -227,9 +316,11 @@ html, body {
 }
 
 .container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv .btn__download__cv {
+    display: block;
+    max-width: 180px;
     background-color: var(--primary-color);
     color: #fff;
-    box-shadow: 0px 4px 4px #ccc;
+    box-shadow: var(--box-shadow-default);
     border-radius: var(--border-radius-default);
     border: none;
     outline: 0;
@@ -237,6 +328,7 @@ html, body {
     cursor: pointer;
     transition: .3s;
     font-size: 1.06rem;
+    text-decoration: none;
 }
 
 .container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv .btn__download__cv:hover {
@@ -255,6 +347,7 @@ html, body {
 .container .section__skills .area__title h1 {
     font-weight: var(--primary-font-weight);
     font-size: 1.56rem;
+    color: var(--primary-text-color);
 }
 
 .container .section__skills .area__content__skills {
@@ -264,7 +357,7 @@ html, body {
 
 .container .section__skills .area__content__skills .area__item {
     padding-top: 2.2rem;
-    width: calc(194px + 20px);
+    width: 100%;
     margin-right: 20px;
 }
 
@@ -282,6 +375,12 @@ html, body {
 
 .container .section__skills .area__content__skills .area__item .title__item h2 {
     font-weight: var(--primary-font-weight);
+    color: var(--primary-text-color);
+}
+
+.container .section__skills .area__content__skills .area__item .title__item i {
+    transition: .3s;
+    color: var(--primary-text-color);
 }
 
 .container .section__skills .area__content__skills .area__item .technology__item {
@@ -290,6 +389,7 @@ html, body {
 
 .container .section__skills .area__content__skills .area__item .technology__item .area__top h3 {
     font-weight: var(--primary-font-weight);
+    color: var(--primary-text-color);
 }
 
 /* code specific to first item */
@@ -307,6 +407,10 @@ html, body {
 }
 
 /* code specific to second item */
+.container .section__skills .area__content__skills .second__item .area__container {
+    display: none;
+}
+
 .container .section__skills .area__content__skills .second__item .tech__1 .progress__bar__full {
     width: 95%;
 }
@@ -320,6 +424,10 @@ html, body {
 }
 
 /* code specific to third item */
+.container .section__skills .area__content__skills .third__item .area__container {
+    display: none;
+}
+
 .container .section__skills .area__content__skills .third__item .tech__1 .progress__bar__full {
     width: 88%;
 }
@@ -329,8 +437,16 @@ html, body {
 }
 
 /* section portfolio - right side */
+.container .section__portfolio {
+    display: none;
+}
+
 .container .section__portfolio .area__content__portfolio .area__title {
     padding-top: 2.2rem;
+}
+
+.container .section__portfolio .area__content__portfolio .area__title h1 {
+    color: var(--primary-text-color);
 }
 
 .container .section__portfolio .area__content__portfolio .area__itens__portfolio {
@@ -350,8 +466,8 @@ html, body {
     width: inherit;
     height: inherit;
     border-radius: var(--border-radius-default);
-    border: 1px solid #ccc;
-    box-shadow: 0px 4px 4px #ccc;
+    border: var(--border-dafault);
+    box-shadow: var(--box-shadow-default);
 }
 
 .container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio:hover .shadow__info {
@@ -405,4 +521,59 @@ html, body {
 
 .container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info .repo__git__hub a i {
     font-size: 1.5rem;
+}
+
+/* medias */
+@media screen and (max-width: 672px) {
+    .container .right__side {
+        padding-left: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container .section__about__me .area__content__about__me .area__info__about__me .title__single h2 {
+        font-size: 1rem;
+    }
+
+    .container .section__about__me .area__content__about__me .area__info__about__me .subtitle__single h3 {
+        font-size: 1rem;
+    }
+
+    .container .right__side .section__main .area__content .area__bio {
+        text-align: center;
+    }
+
+    .container .right__side .section__main .area__content .link__cta a {
+        font-size: 0.9rem;
+    }
+
+    .container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio {
+        width: 375px;
+        height: 200px;
+        margin-right: 0;
+    }
+
+    .container .section__skills .area__content__skills .area__item {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio {
+        width: 300px;
+        height: 180px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio {
+        width: 280px;
+        height: 160px;
+        margin-right: 0;
+    }
+
+    .container .section__about__me .area__content__about__me .area__info__about__me .title__single h2 {
+        font-size: 1.10rem;
+    }
 }
