@@ -90,6 +90,12 @@ const loadBar = () => {
 const verifyScreen = () => {
     if(innerWidth < 672) {
         leftSide.style.display = 'none'
+
+        itensMenu.forEach(item => {
+            item.addEventListener('click', () => {
+                closeMenuMobile()
+            })
+        })
     }
 }
 
