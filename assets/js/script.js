@@ -8,7 +8,7 @@ const btnToggleTheme = document.querySelector('.area__icon__change__theme i')
 
 setTimeout(() => {
     document.querySelector('.container .preload').style.display = 'none'
-}, 400);
+}, 1000);
 
 btnCloseMenu.addEventListener('click', () => {
     if(innerWidth > 672) {

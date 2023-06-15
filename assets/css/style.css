@@ -538,6 +538,11 @@ body.dark__theme .container .left__side .area__left__side .area__links .own__nav
     .container .section__about__me .area__content__about__me .area__info__about__me .subtitle__single h3 {
         font-size: 1rem;
     }
+    
+    .container .section__about__me .area__content__about__me .area__info__about__me .area__btn__download__cv .btn__download__cv {
+        max-width: none;
+        text-align: center;
+    }
 
     .container .right__side .section__main .area__content .area__bio {
         text-align: center;
