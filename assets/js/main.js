@@ -1,6 +1,10 @@
 const itensMenu = document.querySelectorAll('.onw__link')
 const classActiveMenu = 'bg__link__active'
 const titleItensSkills = document.querySelectorAll('.container .section__skills .area__content__skills .area__item .title__item')
+const sectionMain = document.querySelector('.section__main')
+const sectionAbout = document.querySelector('.section__about__me')
+const sectionSkills = document.querySelector('.section__skills')
+const sectionPortfolio = document.querySelector('.section__portfolio')
 
 itensMenu.forEach(item => {
     item.addEventListener('click', (event) => {
@@ -15,27 +19,27 @@ itensMenu.forEach(item => {
                 itensMenu[3].classList.remove(classActiveMenu)
                 itensMenu[4].classList.remove(classActiveMenu)
 
-                document.querySelector('.section__main').style.display = 'block'
-                document.querySelector('.section__about__me').style.display = 'none'
-                document.querySelector('.section__skills').style.display = 'none'
-                document.querySelector('.section__portfolio').style.display = 'none'
+                sectionMain.style.display = 'block'
+                sectionAbout.style.display = 'none'
+                sectionSkills.style.display = 'none'
+                sectionPortfolio.style.display = 'none'
                 break;
         
             case '2':
                 loadBar()
-
+                    
                 item.classList.add(classActiveMenu)
                 itensMenu[0].classList.remove(classActiveMenu)
                 itensMenu[2].classList.remove(classActiveMenu)
                 itensMenu[3].classList.remove(classActiveMenu)
                 itensMenu[4].classList.remove(classActiveMenu)
 
-                document.querySelector('.section__main').style.display = 'none'
-                document.querySelector('.section__skills').style.display = 'none'
-                document.querySelector('.section__portfolio').style.display = 'none'
+                sectionMain.style.display = 'none'
+                sectionSkills.style.display = 'none'
+                sectionPortfolio.style.display = 'none'
 
                 setTimeout(() => {
-                    document.querySelector('.section__about__me').style.display = 'block'
+                    sectionAbout.style.display = 'block'
                 }, 2000)
 
                 break;
@@ -49,12 +53,12 @@ itensMenu.forEach(item => {
                 itensMenu[3].classList.remove(classActiveMenu)
                 itensMenu[4].classList.remove(classActiveMenu)
                 
-                document.querySelector('.section__main').style.display = 'none'
-                document.querySelector('.section__about__me').style.display = 'none'
-                document.querySelector('.section__portfolio').style.display = 'none'
+                sectionMain.style.display = 'none'
+                sectionAbout.style.display = 'none'
+                sectionPortfolio.style.display = 'none'
 
                 setTimeout(() => {
-                    document.querySelector('.section__skills').style.display = 'block'
+                    sectionSkills.style.display = 'block'
                 }, 2000)
 
                 break;
@@ -68,12 +72,12 @@ itensMenu.forEach(item => {
                 itensMenu[2].classList.remove(classActiveMenu)
                 itensMenu[4].classList.remove(classActiveMenu)
                 
-                document.querySelector('.section__main').style.display = 'none'
-                document.querySelector('.section__about__me').style.display = 'none'
-                document.querySelector('.section__skills').style.display = 'none'
+                sectionMain.style.display = 'none'
+                sectionAbout.style.display = 'none'
+                sectionSkills.style.display = 'none'
 
                 setTimeout(() => {
-                    document.querySelector('.section__portfolio').style.display = 'block'
+                    sectionPortfolio.style.display = 'block'
                 }, 2000)
                 
                 break;

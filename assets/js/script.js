@@ -102,7 +102,6 @@ const verifyScreen = () => {
 const darkTheme = () => {
     let classDarkTheme = 'dark__theme'
     let imgProjectPortfolio = document.querySelectorAll('.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio img')
-    let shadowInfoProjectPortifolio = document.querySelectorAll('.container .section__portfolio .area__content__portfolio .area__itens__portfolio .item__portfolio .shadow__info')
 
     if(btnToggleTheme.classList.contains('ri-moon-line')) {
         btnToggleTheme.classList.replace('ri-moon-line', 'ri-sun-line')
@@ -114,10 +113,6 @@ const darkTheme = () => {
 
         imgProjectPortfolio.forEach(item => {
             item.style.border = '0'
-        })
-
-        shadowInfoProjectPortifolio.forEach(item => {
-            item.style.backgroundColor = 'rgba(0,0,0,0.6)'
         })
 
     }else {
