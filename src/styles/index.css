@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  --color-primary: #3ACD52;
+  --text-color-primary: #000;
+  --text-color-secondary: #333;
+  --boxshadow-default: 0 4px 4px 0 #ccc;
+  --border-default: 1px solid #ccc;
+}
