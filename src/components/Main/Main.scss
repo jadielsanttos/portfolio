@@ -1,0 +1,112 @@
+.area_section_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .left_side .text_top span {
+        font-size: 15px;
+        color: var(--text-color-secondary);
+    }
+
+    .left_side .area_text_main h1 {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .left_side .area_text_main .borders {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 167px;
+
+        .border_left {
+            background-color: var(--color-primary);
+            border-radius: 50px;
+            width: 111px;
+            height: 7px;
+        }
+
+        .border_right {
+            background-color: var(--text-color-primary);
+            border-radius: 50px;
+            width: 46px;
+            height: 7px;
+        }
+    }
+
+    .left_side .text_description {
+        padding: 15px 0;
+
+        p {
+            font-size: 15px;
+            color: var(--text-color-secondary);
+        }
+    }
+
+    .left_side .area_btn_cta a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: var(--text-color-primary);
+        box-shadow: var(--boxshadow-default);
+        border-radius: 50px;
+        transition: .3s;
+        font-size: 16px;
+        padding: 10px;
+
+        &:hover {
+            transform: scale(0.98);
+        }
+
+        svg {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
+
+    .right_side { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    .right_side .area_icons_hover {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        height: 220px;
+
+        .icon_item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 50%;
+            color: #fff;
+            background-color: var(--text-color-primary);
+            transition: .3s;
+
+            &:hover {
+                transform: rotate(45deg);
+            }
+
+            svg {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .right_side .area_img img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        box-shadow: var(--boxshadow-default);
+    }
+}

@@ -7,6 +7,7 @@
 :root {
   font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
+  scroll-behavior: smooth;
 
   --color-primary: #3ACD52;
   --text-color-primary: #000;
