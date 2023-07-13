@@ -2,6 +2,9 @@ import './styles/App.scss'
 
 import { Main } from './components/Main/Main'
 import { Menu } from './components/Menu/Menu'
+import { About } from './components/About/About'
+import { Skills } from './components/Skills/Skills'
+import { Portfolio } from './components/Portfolio/Portfolio'
 
 function App() {
   return (
@@ -12,14 +15,23 @@ function App() {
       <section className="section_main">
         <Main />
       </section>
-      <section className="section_sobre" id="Sobre">
-        Sessão sobre
+      <section className="section_about" id="Sobre">
+        <div className="title">
+          <h1>Sobre</h1>
+        </div>
+        <About />
       </section>
-      <section id="Habilidades" style={{paddingTop: '400px'}}>
-        Sessão habilidades
+      <section className="section_skills" id="Habilidades">
+        <div className="title">
+          <h1>Habilidades</h1>
+        </div>
+        <Skills />
       </section>
-      <section id="Portifolio" style={{paddingTop: '400px'}}>
-        Sessão portifólio
+      <section className="section_portfolio" id="Portifolio">
+        <div className="title">
+          <h1>Portifólio</h1>
+        </div>
+        <Portfolio />
       </section>
     </>
   )

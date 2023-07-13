@@ -1,0 +1,25 @@
+.area_section_skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 111px);
+    gap: 20px;
+    justify-content: center;
+
+    .skill_item {
+        width: 111px;
+        height: 96px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        border: 2px solid var(--color-primary);
+        transition: .3s;
+
+        &:hover {
+            box-shadow: var(--boxshadow-default);
+        }
+
+        span svg {
+            font-size: 40px;
+        }
+    }
+}

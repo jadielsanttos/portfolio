@@ -2,6 +2,13 @@
     height: 70px;
 }
 
-.section_header, .section_main {
+.title h1 {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section_header, .section_main, .section_about, .section_skills, .section_portfolio {
     padding: 0 20px 100px 20px;
 }
