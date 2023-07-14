@@ -51,4 +51,60 @@
             padding: 5px 10px;
         }
     }
+
+    .shadow_effect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 98;
+        background-color: rgba(0,0,0,0.5);
+        transition: all ease 0.5s;
+    }
+
+    .shadow_effect .portfolio_modal {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background-color: #fff;
+        height: auto;
+        padding: 20px;
+        border-radius: 20px 20px 0 0;
+        transition: all ease 0.5s;
+
+        .area_btn_close_modal {
+            display: flex;
+            justify-content: flex-end;
+
+            span svg {
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
+
+        .nav_modal {
+            padding-top: 20px;
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: var(--text-color-primary);
+                transition: .3s;
+                margin-bottom: 20px;
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+                
+                svg {
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+
+            }
+        }
+    }
 }

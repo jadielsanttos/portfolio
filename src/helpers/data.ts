@@ -17,7 +17,8 @@ export const timeLine: TimeLineType[] = [
 ]
 
 export const portFolioItems: PortfolioItem[] = [
-    {
+    {   
+        id: 1,
         name: 'MyPage', 
         description: 'Um sistema de criação de páginas de links, com aparência dinâmica e estatísticas em tempo real',
         techs: ['Javascript', 'Laravel', 'MYSQL'],
@@ -25,6 +26,7 @@ export const portFolioItems: PortfolioItem[] = [
         url: null
     },
     {
+        id: 2,
         name: 'Zenflix', 
         description: 'Uma plataforma de filmes com painel admin e trailers 100% dinâmicos',
         techs: ['Javascript', 'PHP', 'MYSQL'],
@@ -32,6 +34,7 @@ export const portFolioItems: PortfolioItem[] = [
         url: 'http://zenflix.epizy.com/'
     },
     {
+        id: 3,
         name: 'Quiz', 
         description: 'Um teste voltado para a galera da área de programação',
         techs: ['Typescript', 'React', 'Tailwind'],
@@ -39,6 +42,7 @@ export const portFolioItems: PortfolioItem[] = [
         url: 'https://quiz-react-nu.vercel.app/'
     },
     {
+        id: 4,
         name: 'OnChat', 
         description: 'Um chat desenvolvido para automatizar um atendimento online',
         techs: ['HTML', 'CSS', 'Javascript'],

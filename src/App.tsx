@@ -1,12 +1,36 @@
 import './styles/App.scss'
 
+import { useEffect, useState } from 'react'
+
 import { Main } from './components/Main/Main'
 import { Menu } from './components/Menu/Menu'
 import { About } from './components/About/About'
 import { Skills } from './components/Skills/Skills'
 import { Portfolio } from './components/Portfolio/Portfolio'
+import { Footer } from './components/Footer/Footer'
+import { BtnToTop } from './components/BtnToTop/BtnToTop'
 
 function App() {
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 1100) {
+        setShowBtnUp(true)
+      }else {
+        setShowBtnUp(false)
+      }
+    })
+  }, [])
+
+  const [showBtnUp, setShowBtnUp] = useState<boolean>(false)
+
+  const scrollToTop = () => {
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      })
+  }
+
   return (
     <>
       <header className="section_header">
@@ -33,6 +57,13 @@ function App() {
         </div>
         <Portfolio />
       </section>
+      <footer className="section_footer">
+        <Footer />
+      </footer>
+
+      {showBtnUp !== false &&
+        <BtnToTop click={scrollToTop} />
+      }
     </>
   )
 }
