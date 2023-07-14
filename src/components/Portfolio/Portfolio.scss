@@ -1,6 +1,8 @@
 .area_section_portfolio {
     display: grid;
     gap: 20px;
+    max-width: var(--max-width);
+    margin: auto;
 
     .portfolio_item {
         position: relative;
@@ -105,6 +107,16 @@
                 }
 
             }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .area_section_portfolio {
+        grid-template-columns: repeat(auto-fill, 373px);
+
+        .portfolio_item {
+            width: 373px;
         }
     }
 }

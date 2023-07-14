@@ -4,6 +4,8 @@
     align-items: center;
     flex-direction: column;
     padding: 25px 0;
+    max-width: var(--max-width);
+    margin: auto;
 
     .area_copy p {
         font-size: 13px;
@@ -39,5 +41,16 @@
 @media screen and (min-width: 375px) {
     .area_section_footer .area_copy p {
         font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .area_section_footer {
+        justify-content: space-between;
+        flex-direction: row;
+
+        .area_icons_social_media {
+            padding-top: 0;
+        }
     }
 }

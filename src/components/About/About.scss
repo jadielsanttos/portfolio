@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    max-width: var(--max-width);
+    margin: auto;
 
     .left_side {
         position: relative;
@@ -52,5 +54,23 @@
         font-size: 15px;
         color: var(--text-color-secondary);
         margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .area_section_about {
+        justify-content: space-between;
+        flex-direction: row;
+
+        .left_side .area_info  .item_info span {
+            font-size: 17px;
+        }
+
+        .right_side p {
+            font-size: 17px;
+            color: var(--text-color-secondary);
+            max-width: 400px;
+            margin-top: 0;
+        }
     }
 }

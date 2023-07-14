@@ -17,3 +17,14 @@
 .section_footer {
     padding: 0 20px;
 }
+
+@media screen and (min-width: 770px) {
+    .section_header {
+        padding: 0;
+    }
+
+    .section_main, .section_about, 
+    .section_skills, .section_portfolio {
+        padding: 0 0 100px 0;
+    }
+}

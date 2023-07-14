@@ -3,6 +3,8 @@
     grid-template-columns: repeat(auto-fill, 111px);
     gap: 20px;
     justify-content: center;
+    max-width: var(--max-width);
+    margin: auto;
 
     .skill_item {
         width: 111px;
@@ -13,6 +15,7 @@
         border-radius: 10px;
         border: 2px solid var(--color-primary);
         transition: .3s;
+        cursor: pointer;
 
         &:hover {
             box-shadow: var(--boxshadow-default);

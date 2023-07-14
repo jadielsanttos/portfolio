@@ -3,6 +3,7 @@ import './styles/App.scss'
 import { useEffect, useState } from 'react'
 
 import { Main } from './components/Main/Main'
+import { MenuDesktop } from './components/Menu/MenuDesktop'
 import { Menu } from './components/Menu/Menu'
 import { About } from './components/About/About'
 import { Skills } from './components/Skills/Skills'
@@ -20,9 +21,25 @@ function App() {
         setShowBtnUp(false)
       }
     })
+
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768) {
+        setShowMenuDesktop(true)
+      }else {
+        setShowMenuDesktop(false)
+      }
+    })
+
+    if(window.innerWidth > 768) {
+        setShowMenuDesktop(true)
+    }else {
+        setShowMenuDesktop(false)
+    }
+    
   }, [])
 
   const [showBtnUp, setShowBtnUp] = useState<boolean>(false)
+  const [showMenuDesktop, setShowMenuDesktop] = useState<boolean>(false)
 
   const scrollToTop = () => {
       window.scroll({
@@ -34,7 +51,12 @@ function App() {
   return (
     <>
       <header className="section_header">
-        <Menu />
+        {showMenuDesktop !== true &&
+          <Menu />
+        }
+        {showMenuDesktop !== false &&
+          <MenuDesktop />
+        }
       </header>
       <section className="section_main">
         <Main />

@@ -1,0 +1,18 @@
+.area_menu_items .menu_desktop nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li a {
+        display: block;
+        text-decoration: none;
+        color: var(--text-color-primary);
+        transition: .3s;
+        text-align: center;
+        font-size: 17px;
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}

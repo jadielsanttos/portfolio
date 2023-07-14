@@ -21,7 +21,7 @@ export const Main = () => {
                     <p>Fascinado por esse mundo de tecnologia e programação, estou sempre buscando evolução.</p>
                 </div>
                 <div className="area_btn_cta">
-                    <a href="#teste">Enviar mensagem <AiOutlineSend /></a>
+                    <a href="https://api.whatsapp.com/send?phone=5598996070979" target="_blank">Enviar mensagem <AiOutlineSend /></a>
                 </div>
             </div>
             <div className="right_side">
