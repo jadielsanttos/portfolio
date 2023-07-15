@@ -12,7 +12,7 @@
         color: #000;
         border-radius: 10px;
         padding: 20px;
-        box-shadow: 2px 2px 2px 3px #ccc; 
+        box-shadow: 1px 1px 5px #ccc; 
     }
 
     .portfolio_item .area_top {
@@ -54,64 +54,45 @@
         }
     }
 
-    .shadow_effect {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 98;
-        background-color: rgba(0,0,0,0.5);
-        transition: all ease 0.5s;
-    }
-
-    .shadow_effect .portfolio_modal {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 99;
-        background-color: #fff;
+    .portfolio_item .pop_up {
+        width: 250px;
         height: auto;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: #fff;
+        box-shadow: 1px 1px 5px #ccc;
+        border-radius: 10px;
         padding: 20px;
-        border-radius: 20px 20px 0 0;
-        transition: all ease 0.5s;
+        transition: all ease-in-out .3s;
 
-        .area_btn_close_modal {
+        nav {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 10px;
 
-            span svg {
-                font-size: 30px;
-                cursor: pointer;
-            }
-        }
-
-        .nav_modal {
-            padding-top: 20px;
             a {
                 display: flex;
                 align-items: center;
                 text-decoration: none;
                 color: var(--text-color-primary);
                 transition: .3s;
-                margin-bottom: 20px;
-
+    
                 &:hover {
                     color: var(--color-primary);
                 }
-                
+    
                 svg {
                     font-size: 20px;
                     margin-right: 10px;
                 }
-
             }
         }
     }
+    
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
     .area_section_portfolio {
         grid-template-columns: repeat(auto-fill, 373px);
 

@@ -25,7 +25,7 @@ export const Menu = () => {
     return (
         <div className="area_menu">
             <div className="area_logo">
-                <a href="/"><img src="assets/logo.png" alt="Logo" /></a>
+                <a href="/"><img src="/logo.png" alt="Logo" /></a>
             </div>
             <div className="area_menu_items">
                 <div onClick={openMenuMobile} className="toggle_menu"><HiMenuAlt1 /></div>

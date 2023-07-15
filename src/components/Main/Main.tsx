@@ -30,7 +30,7 @@ export const Main = () => {
                     <a href="https://www.linkedin.com/in/jadiel-santos/" target='_blank' className="icon_item"><BsLinkedin /></a>
                 </div>
                 <div className="area_img">
-                    <img src="/assets/my-img.png" alt="Minha imagem" />
+                    <img src="/my-img.png" alt="Minha imagem" />
                 </div>
             </div>
         </div>

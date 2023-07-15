@@ -7,7 +7,7 @@ export const MenuDesktop = () => {
     return (
         <div className="area_menu">
             <div className="area_logo">
-                <a href="/"><img src="assets/logo.png" alt="Logo" /></a>
+                <a href="/"><img src="/logo.png" alt="Logo" /></a>
             </div>
             <div className="area_menu_items">
                 <div className="menu_desktop">
