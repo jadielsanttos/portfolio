@@ -22,7 +22,7 @@ export const portFolioItems: PortfolioItem[] = [
         name: 'MyPage', 
         description: 'Um sistema de criação de páginas de links, com aparência dinâmica e estatísticas em tempo real',
         techs: ['Javascript', 'Laravel', 'MYSQL'],
-        repository: 'https://github.com/jadielsanttos/Mylinks-laravel',
+        repository: 'https://github.com/jadielsanttos/mypage-laravel',
         url: null
     },
     {
