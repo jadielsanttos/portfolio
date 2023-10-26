@@ -14,7 +14,7 @@ export const Footer = () => {
         {url: 'mailto:jadielsilva11406@gmail.com', icon: <BiLogoGmail />},
         {url: 'https://github.com/jadielsanttos', icon: <BsGithub />},
         {url: 'https://www.linkedin.com/in/jadiel-santos/', icon: <BsLinkedin />},
-        {url: 'https://instagram.com/jadielsantosof', icon: <BsInstagram />}
+        {url: 'https://instagram.com/jadielsanntos', icon: <BsInstagram />}
     ]
 
     return (
