@@ -16,7 +16,7 @@ export const timeLine: TimeLineType[] = [
     {stage: 3, label: '2023 - Fullstack'}
 ]
 
-export const portFolioItems: PortfolioItem[] = [
+export const portfolioItems: PortfolioItem[] = [
     {   
         id: 1,
         name: 'MyPage', 
@@ -43,10 +43,10 @@ export const portFolioItems: PortfolioItem[] = [
     },
     {
         id: 4,
-        name: 'OnChat', 
-        description: 'Um chat desenvolvido para automatizar um atendimento online',
-        techs: ['HTML', 'CSS', 'Javascript'],
-        repository: 'https://github.com/jadielsanttos/chat-js',
-        url: 'https://onchat.netlify.app/'
+        name: 'Busca CNPJ', 
+        description: 'Um site desenvolvido para fazer consultas de CNPJ, utilizando uma API externa',
+        techs: ['PHP', 'MYSQL', 'Javascript'],
+        repository: 'https://github.com/jadielsanttos/consulta-cnpj',
+        url: 'https://buscacnpj.online/'
     }
 ]

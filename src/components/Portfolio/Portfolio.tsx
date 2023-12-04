@@ -1,6 +1,6 @@
 import './Portfolio.scss'
 
-import { portFolioItems } from '../../helpers/data'
+import { portfolioItems } from '../../helpers/data'
 
 import { useState } from 'react'
 
@@ -18,12 +18,12 @@ export const Portfolio = () => {
             }else {
                 setModalOpened(id)
             }
-        }, 200)  
+        }, 200)
     }
 
     return (
         <div className="area_section_portfolio">
-            {portFolioItems.map((item) => (
+            {portfolioItems.map((item) => (
                 <div key={item.id} className="portfolio_item">
                     <div className="area_top">
                         <h1>{item.name}</h1>
